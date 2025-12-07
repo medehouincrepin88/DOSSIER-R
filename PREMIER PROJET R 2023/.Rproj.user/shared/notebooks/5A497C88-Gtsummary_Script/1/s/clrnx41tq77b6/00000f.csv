@@ -1,0 +1,341 @@
+"0","BaseUtile_r %>%"
+"0","dplyr::select(sexe_r, diplome_r, Diff2_r, Abs1_r, Abs2_r, Delai_r) %>%"
+"0","gtsummary::tbl_summary("
+"0","  ## paramètres de tbl_summary"
+"0","  "
+"0","  by = Delai_r, ## variables qui forme les groupes"
+"0","  "
+"0","  label = list(diplome_r ~ ""diplome le plus eleve"", "
+"0","               Diff2_r ~ ""difficulte d_integration au   "
+"0","               debut"", sexe_r ~ ""sexe"", Abs1_r ~ ""absence aux rencontres"", "
+"0","               Abs2_r ~ ""absence "
+"0","               aux entretiens""), ## labélisation des variables dans le tableau"
+"0","  "
+"0","  percent = ""column"", ## Type de pourcentage affichés dans le tableau "
+"0","  "
+"0","  digits = list(Abs1_r ~ 2, Abs2_r ~ 3), ## nombre de chiffre après la virgule "
+"0","##pour les résultats des variables précisées"
+"0","  statistic = list(Abs1_r ~ ""{mean} ({sd})"","
+"0","                   all_continuous2() ~ c(""{median} ({p25} - {p75}"", "
+"0","                                         ""{mean} ({sd})"", ""{min} - {max}""),"
+"0","                   sexe_r ~ ""{n}/{N} ({p}%)"","
+"0","                   Diff2_r ~ ""{p} % ({n}/{N})""), ## type et formatage des statistics en forction du type de variable, des variables précisées"
+"0","type = list(sexe_r ~ ""categorical"", Abs2_r ~ ""continuous2""), ## modifier et préciser comment il faut considérer la variable en terme de type"
+"0","  "
+"0","  missing = ""always"", ## afficher les stat sur les valeurs manquantes"
+"0","  "
+"0","  missing_text = ""Missing"", ## formatage et nomination de la variable ""valeur manquante"""
+"0","  "
+"0","  ) %>% "
+"0","  "
+"0","  add_overall() %>% ## ajouter les statistiques sur la base totale (non par groupe)"
+"0","  "
+"0","  add_difference() %>% ## afficher la différence entre les groupes, le test de significativité de la différence"
+"0","    add_stat_label() ## afficher une colonne qui signifie les statistiques calculées et leur format d'affichage. Ex: mean (sd)"
+"1","[34mℹ[39m The package ""smd"" (>= 0.6.6) is required.
+[31m✖[39m Would you like to install it?
+"
+"1",""
+"1","
+"
+"1","1: Yes"
+"1","
+"
+"1","2: No"
+"1","
+"
+"1",""
+"1","
+"
+"0","# Fusionner les data.frame projet et langues en utilisant la clé de fusion appropriée"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","fusion <- merge(projet, langues, by = ""clé"")"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Créer un objet tbl_summary avec gtsummary"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl <- tbl_summary(fusion, "
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   by = filiere,"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   missing = ""no"", # Gérer les valeurs manquantes"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   label = list(sexe ~ ""Sexe"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                niveau_instruction ~ ""Niveau d'instruction"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                statut_juridique ~ ""Statut juridique"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                proprietaire_locataire ~ ""Propriétaire/Locataire""))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_sex <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = sexe)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le niveau d'instruction"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = niveau_instruction)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le statut juridique"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = statut_juridique)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le propriétaire/locataire"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = proprietaire_locataire)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le statut juridique et le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(statut_juridique, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le niveau d'instruction et le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(niveau_instruction, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition du propriétaire/locataire selon le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(proprietaire_locataire, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Afficher les tableaux récapitulatifs"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_sex"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl <- tbl_summary(fusion, "
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   by = filiere,"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   missing = ""no"", # Gérer les valeurs manquantes"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   label = list(sexe ~ ""Sexe"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                niveau_instruction ~ ""Niveau d'instruction"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                statut_juridique ~ ""Statut juridique"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                proprietaire_locataire ~ ""Propriétaire/Locataire""))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_sex <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = sexe)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le niveau d'instruction"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = niveau_instruction)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le statut juridique"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = statut_juridique)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le propriétaire/locataire"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = proprietaire_locataire)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le statut juridique et le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(statut_juridique, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition des PME selon le niveau d'instruction et le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(niveau_instruction, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Répartition du propriétaire/locataire selon le sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc_sexe <- tbl %>%"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","  tbl_strata(strata = c(proprietaire_locataire, sexe))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Afficher les tableaux récapitulatifs"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_sex"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_statut_jur_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_niveau_instr_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl_proprio_loc_sexe"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","View(fusion)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","View(fusion)"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","# Créer un objet tbl_summary avec gtsummary"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","tbl <- tbl_summary(fusion, "
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   by = filiere,"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   missing = ""no"", # Gérer les valeurs manquantes"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                   label = list(sexe ~ ""Sexe"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                niveau_instruction ~ ""Niveau d'instruction"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                statut_juridique ~ ""Statut juridique"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                proprietaire_locataire ~ ""Propriétaire/Locataire"","
+"1","Entrer un des items du menu, ou 0 pour sortir
+"
+"0","                                date_variable ~ ""Variable sur les dates""))"
+"1","Entrer un des items du menu, ou 0 pour sortir
+"

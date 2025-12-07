@@ -1,0 +1,7 @@
+"0","remotes::install_github(""ddsjoberg/gtsummary"")"
+"2","Error in utils::download.file(url, path, method = method, quiet = quiet,  : 
+  download from 'https://api.github.com/repos/ddsjoberg/gtsummary/tarball/HEAD' failed
+"
+"2","Error in exists(cacheKey, where = .rs.WorkingDataEnv, inherits = FALSE) : 
+  invalid first argument
+"

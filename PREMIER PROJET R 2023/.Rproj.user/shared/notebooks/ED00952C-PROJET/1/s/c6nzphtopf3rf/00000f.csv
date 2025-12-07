@@ -1,0 +1,10 @@
+"0",""
+"0","#--------------------------------------------------------------------------------------"
+"0","# lecture de la feuille 2 du fichier Excel ""Base_Partie 2.xlsx"" :IMPORTATION  "
+"0","#--------------------------------------------------------------------------------------"
+"0",""
+"0","Feuille2 <- read_excel(""Base_Partie 2.xlsx"","
+"0","sheet = ""district"")"
+"2","Error in read_excel(""Base_Partie 2.xlsx"", sheet = ""district"") : 
+  could not find function ""read_excel""
+"

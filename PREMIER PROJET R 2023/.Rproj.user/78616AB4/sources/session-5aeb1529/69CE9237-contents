@@ -1,0 +1,83 @@
+ :
+  dplyr
+tidyr
+janitor
+
+  ggplot2
+ggnewscale
+ggspatial
+ggpirate
+visdat
+viridis
+scales
+
+
+  gtsummary
+gt
+flextable
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ggplot2, qui est utilisé pour créer des graphiques et des visualisations de données.
+
+library(dplyr): Charge le package dplyr, qui fournit des outils pour manipuler et transformer des données de manière efficace.
+
+library(tidyverse): Charge le tidyverse, un ensemble de packages R qui inclut ggplot2, dplyr, tidyr, et d'autres, offrant un environnement cohérent pour la manipulation et la visualisation de données.
+
+library(gtsummary): Charge le package gtsummary, qui permet de créer des résumés de données sous forme de tableaux.
+
+library(readxl): Charge le package readxl, qui facilite l'importation de données à partir de fichiers Excel.
+
+library(gridExtra): Charge le package gridExtra, qui fournit des fonctions pour organiser et combiner des graphiques ggplot2.
+
+library(gt): Charge le package gt, qui permet de créer des tables de données interactives et personnalisables.
+
+library(flextable): Charge le package flextable, qui permet de créer des tableaux réactifs pour les rapports.
+
+library(janitor): Charge le package janitor, qui fournit des fonctions pour nettoyer les noms de colonnes et les données.
+
+library(visdat): Charge le package visdat, qui permet de visualiser les données manquantes dans un ensemble de données.
+
+library(viridis): Charge le package viridis, qui propose des palettes de couleurs appropriées pour les visualisations.
+
+library(tmap): Charge le package tmap, qui permet de créer des cartes thématiques interactives.
+
+library(raster): Charge le package raster, qui fournit des fonctions pour travailler avec des données raster (grille de pixels).
+
+library(leaflet): Charge le package leaflet, qui permet de créer des cartes interactives basées sur Leaflet JavaScript.
+
+library(ggnewscale): Charge le package ggnewscale, qui permet de superposer des échelles dans un même graphique ggplot2.
+
+library(ggspatial): Charge le package ggspatial, qui étend ggplot2 pour les visualisations spatiales.
+
+library(sf): Charge le package sf, qui fournit des classes et des méthodes pour les données spatiales.
+
+library(scales): Charge le package scales, qui fournit des fonctions pour la mise à l'échelle des axes et des légendes des graphiques ggplot2.
+
+library(ggpirate): Ce code est en commentaire (#) et n'est donc pas exécuté. Cependant, si décommenté et exécuté, il chargerait le package ggpirate, qui ajoute des éléments de piraterie graphique aux graphiques ggplot2.

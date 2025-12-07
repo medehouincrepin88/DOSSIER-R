@@ -1,0 +1,1 @@
+{"height":431.3967861557478,"width":698.0,"size_behavior":0,"conditions":[[1,"Avis : The dot-dot notation (`..prop..`) was deprecated in ggplot2 3.4.0.\nPlease use `after_stat(prop)` instead."]]}
